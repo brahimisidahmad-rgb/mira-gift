@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09070a">
+<title>ميرا | حكاية تستحق أن تُقرأ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800&display=swap');
+:root{--bg:#09070a;--panel:#151016;--pink:#f28ab5;--pink2:#d94d89;--muted:#c7b8c1;--line:#3a2632;--cream:#f7eaf0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 85% 5%,#311426 0,transparent 32%),var(--bg);color:var(--cream);font-family:'Cairo',sans-serif;line-height:1.9}
+a{color:inherit;text-decoration:none}.wrap{width:min(1080px,92%);margin:auto}.top{position:sticky;top:0;z-index:5;background:#09070ae8;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff12}.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}.brand{color:var(--pink);font-weight:800;letter-spacing:1px}.links{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:#e6d6df}.links a:hover{color:var(--pink)}
+.hero{min-height:88vh;display:grid;place-items:center;text-align:center;padding:70px 0 55px;position:relative;overflow:hidden}.hero:before,.hero:after{content:"✿";position:absolute;color:#f28ab51b;font-size:230px;pointer-events:none}.hero:before{top:8%;right:2%}.hero:after{bottom:2%;left:3%;font-size:170px}.eyebrow{color:var(--pink);letter-spacing:3px;font-size:12px}.hero h1{font-family:'Amiri',serif;font-size:clamp(58px,11vw,112px);line-height:1.1;margin:10px 0;color:var(--pink);font-weight:700;text-shadow:0 0 35px #e94f9238}.hero p{max-width:650px;margin:12px auto;color:#ddcbd5;font-size:17px}.rule{width:85px;height:1px;background:var(--pink2);margin:24px auto}.btn{display:inline-block;border:1px solid var(--pink2);padding:10px 24px;border-radius:999px;color:var(--pink);margin:10px 5px;transition:.25s}.btn:hover{background:var(--pink2);color:#10080d;transform:translateY(-2px)}section{padding:76px 0;scroll-margin-top:75px}.section-head{text-align:center;margin-bottom:34px}.section-head small{color:var(--pink);letter-spacing:2px}.section-head h2{font:700 clamp(30px,5vw,45px) 'Amiri',serif;margin:4px 0;color:var(--pink)}.section-head p{color:var(--muted);margin:0}
+.letter{background:linear-gradient(135deg,#1a1119,#100c11);border:1px solid var(--line);border-radius:24px;padding:clamp(22px,5vw,48px);max-width:820px;margin:auto;box-shadow:0 20px 80px #0007}.letter p{font:22px/2 'Amiri',serif;color:#f5e8ee;margin:0 0 14px}.signature{color:var(--pink);text-align:left;font-size:15px;margin-top:20px}
+.traits{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}.trait{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px}.trait b{color:var(--pink);display:block;font-size:16px}.trait span{font-size:13px;color:var(--muted)}
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}.photo{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden}.photo img{display:block;width:100%;height:100%;min-height:210px;object-fit:cover;transition:transform .5s}.photo:hover img{transform:scale(1.035)}.photo figcaption{padding:10px 14px;color:#e6cbd8;font-size:13px}.p1{grid-column:span 5}.p2{grid-column:span 3}.p3{grid-column:span 4}.p4{grid-column:span 4}.p5{grid-column:span 4}
+.music-card{max-width:650px;margin:auto;text-align:center;background:linear-gradient(145deg,#21131d,#100c11);border:1px solid var(--line);padding:28px;border-radius:22px}.disc{width:100px;height:100px;border-radius:50%;margin:0 auto 15px;background:radial-gradient(circle,#f4bfd5 0 8%,#1b1118 9% 18%,#d94d89 19% 22%,#100c11 23% 100%);border:5px solid #2a1824;box-shadow:0 0 35px #e94f9233;animation:spin 8s linear infinite;animation-play-state:paused}.music-card.playing .disc{animation-play-state:running}@keyframes spin{to{transform:rotate(360deg)}}audio{width:100%;margin-top:14px;accent-color:var(--pink)}
+.book{max-width:850px;margin:auto;background:#f2e4e9;color:#25151e;border-radius:8px;padding:clamp(24px,5vw,52px);box-shadow:0 22px 70px #0008;position:relative}.book:before{content:"";position:absolute;top:0;bottom:0;right:16px;width:1px;background:#d8b9c8}.book h3{font:700 30px 'Amiri',serif;color:#8c2856;margin:0 0 16px}.book p{font:21px/2.1 'Amiri',serif;margin:0 0 14px}.book .note{font:13px 'Cairo',sans-serif;color:#80556b;border-top:1px solid #d8b9c8;padding-top:12px;margin-top:24px}
+
+
+.chapter-label{font-size:12px;color:#a83d70;letter-spacing:1px;margin:36px 0 4px;border-top:1px solid #d8b9c8;padding-top:18px}
+.memory-wide{margin:26px 0 30px;text-align:center}
+.memory-wide img{width:100%;max-height:360px;object-fit:cover;border-radius:5px;display:block}
+.memory-wide figcaption,.memory-side figcaption,.memory-note figcaption,.memory-small figcaption{font:13px 'Cairo',sans-serif;color:#80556b;margin-top:8px}
+.memory-side{width:42%;float:right;margin:10px 0 18px 22px}
+.memory-side.reverse{float:left;margin:10px 22px 18px 0}
+.memory-side img{width:100%;max-height:310px;object-fit:cover;border-radius:5px;display:block}
+.memory-note{width:min(78%,480px);margin:30px auto;text-align:center}
+.memory-note img{width:100%;max-height:260px;object-fit:contain;background:#e8d7df;border-radius:5px;padding:10px}
+.memory-small{width:190px;margin:24px auto;text-align:center}
+.memory-small img{width:100%;border-radius:50%;aspect-ratio:1;object-fit:cover;border:5px solid #e5c8d6}
+.song-interlude{clear:both;margin:44px -12px;padding:30px 16px;background:linear-gradient(135deg,#ead2df,#f8edf2);border-top:1px solid #d8b9c8;border-bottom:1px solid #d8b9c8;text-align:center}
+.song-kicker{font-size:12px;color:#8c2856;letter-spacing:1px}
+.song-interlude h3{margin:5px 0;color:#8c2856}
+.song-interlude>p{font:17px/1.9 'Amiri',serif;max-width:570px;margin:0 auto 18px}
+.music-card{max-width:420px;margin:auto;text-align:center;background:#21131d;border:1px solid #d94d89;border-radius:18px;padding:20px;color:#f7eaf0}
+.disc{width:76px;height:76px;border-radius:50%;margin:0 auto 10px;background:radial-gradient(circle,#f4bfd5 0 8%,#1b1118 9% 18%,#d94d89 19% 22%,#100c11 23% 100%);border:4px solid #4c2940;box-shadow:0 0 24px #e94f9233;animation:spin 8s linear infinite;animation-play-state:paused}
+.music-card.playing .disc{animation-play-state:running}
+.song-title{display:block;color:#f28ab5;font-size:20px}.song-artist{display:block;color:#c7b8c1;font-size:12px}
+.music-card audio{width:100%;margin-top:12px}
+.inline-memory{margin:28px auto 30px;max-width:520px;text-align:center}
+.inline-memory img{display:block;width:100%;max-height:430px;object-fit:contain;background:#140e13;border:1px solid #d94d8955;border-radius:14px;padding:8px}
+.inline-memory figcaption{font-size:13px;color:#895d73;margin-top:9px}
+.chapter-pause{margin:30px auto;padding:20px;border-top:1px solid #d7a0bb66;border-bottom:1px solid #d7a0bb66;text-align:center;color:#8c2856}
+.chapter-pause>span{display:block;font-size:13px;margin-bottom:10px}
+.mini-player{max-width:460px;margin:auto;background:#f8edf2;border-radius:12px;padding:12px;color:#321725}
+.mini-player strong{display:block;font-size:14px;margin-bottom:5px}
+.mini-player audio{width:100%;margin:0}
+.end{text-align:center;background:linear-gradient(180deg,transparent,#1b0d16);padding:75px 0 90px}.end h2{font:700 42px 'Amiri',serif;color:var(--pink)}.end p{color:var(--muted);max-width:650px;margin:auto}
+footer{text-align:center;color:#806b77;padding:20px;font-size:12px;border-top:1px solid #ffffff12}
+@media(max-width:650px){.links{gap:10px;font-size:11px}.nav{align-items:flex-start}.p1,.p2,.p3,.p4,.p5{grid-column:span 6}.hero{min-height:78vh}.hero p{font-size:15px}.letter p,.book p{font-size:19px}}
+
+.reader-shell{max-width:850px;margin:0 auto}.reader-top{display:flex;justify-content:space-between;color:#f28ab5;font-size:13px;padding:0 4px 12px}.flip-stage{position:relative;min-height:520px;perspective:1600px}.flip-page{display:none;min-height:520px;background:linear-gradient(100deg,#ead8e0,#f7edf1 9%,#f7edf1 95%,#e5ced9);color:#281722;border-radius:7px;padding:clamp(28px,6vw,64px);box-shadow:0 22px 65px #0009;position:relative;transform-origin:right center;overflow:hidden}.flip-page.active{display:block;animation:pageIn .42s ease both}.flip-page h3{font:700 clamp(28px,5vw,38px) 'Amiri',serif;color:#8c2856;margin:25px 0 22px}.flip-page p{font:clamp(19px,2.8vw,22px)/2.15 'Amiri',serif;color:#321d29;max-width:680px}.page-number{font:12px 'Cairo',sans-serif;color:#a85a7d;border-bottom:1px solid #d9b7c8;padding-bottom:12px}.page-foot{position:absolute;bottom:20px;left:30px;right:30px;text-align:center;color:#a77b90;font-size:11px;border-top:1px solid #dec4d1;padding-top:10px}.page-rose{width:min(230px,60%);margin:22px auto 0;text-align:center}.page-rose img{width:100%;border-radius:5px;display:block}.page-rose figcaption{font-size:12px;color:#8c2856;margin-top:8px}.page-song{margin:25px auto 0;padding:20px;max-width:470px;text-align:center;background:#ead4df;border:1px solid #d6a9bf;border-radius:14px}.page-song h3{font-size:26px;margin:5px}.page-song p{font-size:16px;margin:0 auto 10px}.page-song audio{width:100%}.reader-controls{display:flex;align-items:center;gap:15px;margin:20px auto 8px;max-width:560px}.reader-controls button{border:1px solid #d94d89;background:#1b1018;color:#f28ab5;border-radius:30px;padding:9px 22px;font:600 14px 'Cairo';cursor:pointer}.reader-controls button:disabled{opacity:.35;cursor:not-allowed}.page-progress{height:4px;flex:1;background:#392330;border-radius:5px;overflow:hidden}.page-progress div{height:100%;width:1.666%;background:#f28ab5;transition:width .3s}.reader-hint{text-align:center;color:#a88d9c;font-size:12px}@keyframes pageIn{from{opacity:.35;transform:rotateY(-8deg) translateX(12px)}to{opacity:1;transform:rotateY(0) translateX(0)}}
+@media(max-width:650px){.flip-page,.flip-stage{min-height:570px}.flip-page{padding:26px 23px 58px}.page-foot{bottom:14px}.reader-controls{gap:8px}.reader-controls button{padding:8px 15px}}
+
+
+.quiz-shell{max-width:720px;margin:auto}
+.quiz-progress{height:5px;background:#382431;border-radius:9px;overflow:hidden;margin:0 0 14px}
+.quiz-progress span{display:block;height:100%;width:25%;background:linear-gradient(90deg,#d94d89,#f7a7ca);transition:width .45s}
+.quiz-meta{display:flex;justify-content:space-between;color:#c9a8b9;font-size:12px;margin-bottom:12px}
+.quiz-card{background:linear-gradient(145deg,#1c121b,#100c11);border:1px solid #563247;border-radius:24px;padding:clamp(22px,5vw,38px);box-shadow:0 20px 60px #0006;text-align:center}
+.quiz-kicker{color:#f28ab5;font-size:12px;letter-spacing:2px}
+.quiz-card h3{font:700 clamp(25px,5vw,34px) 'Amiri',serif;color:#f8eaf1;margin:8px 0 22px}
+.quiz-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.quiz-option{border:1px solid #694055;background:#211520;color:#f5dce8;border-radius:14px;padding:13px 12px;font:600 15px 'Cairo',sans-serif;cursor:pointer;transition:.22s}
+.quiz-option:hover{border-color:#f28ab5;transform:translateY(-2px)}
+.quiz-option:disabled{cursor:default;opacity:.65}
+.quiz-option.correct{background:#17372b;border-color:#63bd91;color:#dff9e9}
+.quiz-option.wrong{background:#3b1b29;border-color:#d66b8e;color:#ffe3ec}
+.quiz-feedback{min-height:28px;color:#f4a5c7;margin:14px 0 4px;font-size:14px}
+.quiz-reward{margin:18px auto 4px;padding:20px;border:1px solid #71445c;border-radius:18px;background:linear-gradient(145deg,#2a1825,#160f16);animation:rewardIn .55s ease both}
+.quiz-reward h4{font:700 25px 'Amiri',serif;color:#f6a4c7;margin:0 0 8px}
+.quiz-reward p{color:#f2dce7;margin:6px 0 12px}
+.quiz-reward audio{width:100%;max-width:460px}
+.quiz-reward img{display:block;max-width:100%;max-height:390px;object-fit:contain;margin:12px auto;border-radius:12px}
+.reward-reveal{border:1px dashed #f28ab5;border-radius:16px;background:#211520;color:#f7c3d9;padding:20px 18px;width:100%;font:600 16px 'Cairo';cursor:pointer}
+.reward-reveal span{display:block;font-size:12px;color:#c7a6b8;margin-top:6px}
+.quiz-next{margin-top:18px;border:1px solid #e77eac;border-radius:30px;padding:10px 25px;background:#d94d89;color:#180d14;font:700 14px 'Cairo';cursor:pointer}
+.quiz-note{text-align:center;color:#9d8492;font-size:12px;margin-top:14px}
+@keyframes rewardIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:520px){.quiz-options{grid-template-columns:1fr}.quiz-meta{font-size:11px}}
+/* Softer cinematic transitions instead of a paper-turn effect */
+.flip-page.active{display:block;animation:cinematicIn .48s ease both}
+@keyframes cinematicIn{from{opacity:0;transform:translateX(14px) scale(.992);filter:blur(2px)}to{opacity:1;transform:translateX(0) scale(1);filter:blur(0)}}
+
+
+/* Lively independent quiz cards and full-screen reward pages */
+#quiz{position:relative;overflow:hidden;background:radial-gradient(ellipse at 10% 20%,#4a1d3b55,transparent 38%),radial-gradient(ellipse at 90% 80%,#1b497455,transparent 35%),linear-gradient(180deg,#100b12,#160d18 55%,#0d0a10);border-top:1px solid #ffffff12;border-bottom:1px solid #ffffff12}
+#quiz:before,#quiz:after{content:"✦";position:absolute;color:#f7a7ca22;font-size:150px;pointer-events:none}
+#quiz:before{top:30px;left:4%}#quiz:after{bottom:15px;right:5%;font-size:110px}
+.quiz-intro{display:flex;align-items:center;justify-content:center;gap:14px;max-width:700px;margin:-8px auto 30px;text-align:center;color:#e8c8d8}
+.quiz-intro span{color:#ff9ac4;font-size:22px}
+.quiz-intro p{margin:0;font-size:14px}
+.independent-quiz-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;position:relative;z-index:1}
+.independent-question{position:relative;overflow:hidden;padding:24px;border-radius:23px;border:1px solid #ffffff24;background:linear-gradient(145deg,#28172aee,#17121fee 65%,#17202bee);box-shadow:0 16px 42px #0006;transition:transform .25s,border-color .25s,box-shadow .25s}
+.independent-question:before{content:"";position:absolute;inset:0 0 auto;height:4px;background:linear-gradient(90deg,#f28ab5,#8f7cf6,#66c9d5)}
+.independent-question:hover{transform:translateY(-5px);border-color:#e98ab7;box-shadow:0 22px 48px #0008}
+.question-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.question-number{font-size:12px;letter-spacing:2px;color:#f3a0c5}
+.question-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#f28ab533,#8f7cf633);font-size:22px}
+.independent-question h3{font:700 23px/1.55 'Amiri',serif;color:#fff0f6;margin:8px 0 18px}
+.independent-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.quiz-option{border:1px solid #ffffff20;background:#ffffff0b;color:#f5dce8;border-radius:13px;padding:11px 10px;font:600 14px 'Cairo',sans-serif;cursor:pointer;transition:.2s}
+.quiz-option:hover{border-color:#f28ab5;background:#f28ab51c;transform:translateY(-2px)}
+.quiz-option:disabled{cursor:default;opacity:.85}
+.quiz-option.correct{background:linear-gradient(135deg,#174b3b,#23644c);border-color:#74d6a8;color:#e5fff0}
+.quiz-option.wrong{background:#4b1d32;border-color:#ef7da8;color:#ffe5ef}
+.question-feedback{min-height:28px;margin:12px 0 0;color:#ffc0d9;font-size:13px}
+.reward-page{position:fixed;inset:0;z-index:50;overflow:auto;background:radial-gradient(circle at 15% 15%,#65304d 0,transparent 32%),radial-gradient(circle at 85% 85%,#23495b 0,transparent 35%),#100b13;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}
+.reward-page[hidden]{display:none}
+body.reward-open{overflow:hidden}
+.reward-page-top{position:absolute;top:18px;left:5%;right:5%;display:flex;align-items:center;justify-content:space-between;color:#f3a0c5;font-size:13px}
+.reward-page-top button{border:1px solid #f28ab577;background:#ffffff0b;color:#ffe8f1;border-radius:30px;padding:9px 16px;font:600 13px 'Cairo';cursor:pointer}
+.reward-page-content{width:min(650px,100%);padding:clamp(25px,6vw,48px);text-align:center;border:1px solid #ffffff2b;border-radius:28px;background:linear-gradient(145deg,#281729ee,#17121fee);box-shadow:0 25px 80px #0009;animation:rewardIn .55s ease both}
+.reward-page-content h3{font:700 clamp(28px,6vw,42px) 'Amiri',serif;color:#ffacd0;margin:0 0 12px}
+.reward-page-content p{color:#f4dce8;font-size:16px;line-height:2}
+.reward-page-content audio{width:100%;max-width:480px;margin-top:12px}
+.reward-page-content img{display:block;max-width:100%;max-height:55vh;object-fit:contain;margin:18px auto;border-radius:17px;box-shadow:0 12px 40px #0008}
+.reward-page-content .reward-reveal{border:1px dashed #ff9ac4;border-radius:18px;background:#ffffff0b;color:#ffd8e8;padding:22px;width:100%;font:700 17px 'Cairo';cursor:pointer}
+.reward-page-content .reward-reveal span{display:block;font-size:12px;color:#c7a6b8;margin-top:7px}
+.photo-caption{font:700 22px 'Amiri',serif;color:#ffacd0}
+.reward-page-foot{margin-top:20px;color:#d8afc4;font-size:12px;text-align:center}
+@media(max-width:680px){.independent-quiz-grid{grid-template-columns:1fr}.independent-question{padding:21px}.independent-question h3{font-size:22px}.reward-page{padding:18px}.reward-page-top{top:12px}}
+
+
+/* Celebration: falling petals, twinkling stars, and a soft chime */
+.celebration-layer{position:fixed;inset:0;z-index:80;pointer-events:none;overflow:hidden}
+.celebration-particle{position:absolute;top:-12vh;left:var(--x);opacity:0;will-change:transform,opacity;animation:petalFall var(--duration) cubic-bezier(.18,.62,.38,1) var(--delay) forwards}
+.celebration-particle.petal{width:13px;height:19px;border-radius:80% 10% 80% 10%;background:linear-gradient(145deg,#ffd5e7,#e95b9b 65%,#a82f70);box-shadow:0 0 13px #f28ab577;transform:rotate(var(--rot))}
+.celebration-particle.star{width:13px;height:13px;background:#fff2b8;clip-path:polygon(50% 0%,62% 36%,100% 50%,62% 64%,50% 100%,38% 64%,0 50%,38% 36%);filter:drop-shadow(0 0 7px #fff0a8);animation-name:starDrift}
+@keyframes petalFall{
+ 0%{opacity:0;transform:translate3d(0,-4vh,0) rotate(var(--rot)) scale(.65)}
+ 10%{opacity:1}
+ 85%{opacity:.95}
+ 100%{opacity:0;transform:translate3d(var(--drift),115vh,0) rotate(calc(var(--rot) + 520deg)) scale(1.05)}
+}
+@keyframes starDrift{
+ 0%{opacity:0;transform:translate3d(0,-3vh,0) rotate(0) scale(.35)}
+ 12%{opacity:1}
+ 60%{opacity:1;transform:translate3d(calc(var(--drift)*.45),53vh,0) rotate(160deg) scale(1.1)}
+ 100%{opacity:0;transform:translate3d(var(--drift),110vh,0) rotate(360deg) scale(.55)}
+}
+@media(prefers-reduced-motion:reduce){
+ .celebration-particle{animation-duration:1.4s!important}
+}
+
+
+/* Interactive memory garden */
+.memory-garden{position:relative;max-width:850px;margin:42px auto 0;padding:clamp(22px,5vw,34px);border:1px solid #ffffff25;border-radius:28px;background:radial-gradient(ellipse at 50% 100%,#30523a55,transparent 52%),linear-gradient(145deg,#17221f,#17121e 70%);box-shadow:0 18px 50px #0006;overflow:hidden;text-align:center}
+.garden-heading{display:flex;justify-content:center;align-items:center;gap:15px;color:#f6b0d0}
+.garden-heading>span{font-size:27px}.garden-heading h3{font:700 27px 'Amiri',serif;margin:0;color:#ffb4d2}.garden-heading p{font-size:12px;color:#cdb8c8;margin:0}
+.garden-flowers{display:flex;justify-content:center;gap:clamp(17px,5vw,38px);margin:24px 0 14px}
+.garden-flower{font-size:clamp(35px,8vw,52px);color:#6b6871;filter:grayscale(1);opacity:.4;transform:scale(.8);transition:all .65s}
+.garden-flower.bloom{color:#ff91bd;filter:drop-shadow(0 0 12px #f28ab5aa);opacity:1;transform:scale(1.18);animation:bloomPop .7s cubic-bezier(.2,1.5,.5,1)}
+@keyframes bloomPop{0%{transform:scale(.3) rotate(-35deg)}70%{transform:scale(1.35) rotate(12deg)}100%{transform:scale(1.18) rotate(0)}}
+.garden-progress{height:6px;max-width:400px;margin:0 auto;background:#ffffff18;border-radius:20px;overflow:hidden}
+.garden-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#f28ab5,#ffd88b);border-radius:20px;transition:width .6s}
+.garden-count{font-size:12px;color:#d9b8ca;margin:9px 0 25px}
+.constellation{position:relative;padding:18px 12px 14px;border-top:1px solid #ffffff18}
+.constellation p{font-size:13px;color:#f2d8e5;margin:0 0 10px}
+.star-note{border:0;background:transparent;color:#ffe7a4;font-size:27px;padding:6px 15px;cursor:pointer;filter:drop-shadow(0 0 8px #ffe7a477);transition:transform .2s}
+.star-note:hover{transform:scale(1.5) rotate(18deg)}
+.star-message{min-height:26px;color:#f6b4d0;font:16px 'Amiri',serif;margin-top:5px}
+.final-envelope{display:flex;flex-direction:column;align-items:center;gap:4px;margin:22px auto 0;padding:17px 30px;min-width:min(300px,100%);border:1px solid #f28ab577;border-radius:18px;background:linear-gradient(135deg,#402239,#241b35);color:#ffe7f1;font:700 16px 'Cairo';cursor:pointer;box-shadow:0 10px 30px #0004;transition:.25s}
+.final-envelope:not(:disabled):hover{transform:translateY(-4px);box-shadow:0 15px 35px #ed75ad44}
+.final-envelope:disabled{opacity:.5;cursor:not-allowed;filter:grayscale(.5)}
+.envelope-icon{font-size:29px;color:#ffacd0}.final-envelope small{font-size:10px;color:#d9b8ca;font-weight:400}
+.final-letter-modal{position:fixed;inset:0;z-index:100;background:#08060deF;display:grid;place-items:center;padding:20px;backdrop-filter:blur(12px)}
+.final-letter-modal[hidden]{display:none}
+.final-letter-card{position:relative;width:min(620px,100%);padding:clamp(28px,6vw,50px);text-align:center;border:1px solid #e88db866;border-radius:25px;background:linear-gradient(145deg,#2d1b2c,#15121f);box-shadow:0 25px 90px #000a;animation:rewardIn .5s ease both}
+.final-letter-card small{color:#e9a2c2;letter-spacing:2px;font-size:10px}
+.final-letter-card h2{font:700 38px 'Amiri',serif;color:#ffb4d2;margin:12px 0}
+.final-letter-card p{font:18px/2 'Amiri',serif;color:#f7e6ee}
+.final-letter-card .final-signature{color:#ffb4d2;margin-top:20px}
+.final-seal{width:55px;height:55px;display:grid;place-items:center;margin:0 auto 14px;border-radius:50%;background:#f28ab522;color:#ffafd0;font-size:27px;border:1px solid #f28ab577}
+.close-final{position:absolute;top:12px;left:14px;border:0;background:transparent;color:#f4c6d9;font-size:28px;cursor:pointer}
+@media(max-width:520px){.memory-garden{padding:20px 14px}.garden-heading h3{font-size:24px}.final-letter-card p{font-size:17px}}
+
+
+
+/* BLACK ROSE — cinematic pink & black */
+:root{--bg:#08070b;--panel:#151019;--pink:#ff4f9a;--pink2:#e92d83;--muted:#c5aebb;--line:#493044;--cream:#fff0f7;--rose-glow:#ff4f9a55;--ink:#08070b}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(ellipse at 50% -12%,#55213f 0,transparent 43%),radial-gradient(circle at 0% 48%,#241020 0,transparent 32%),radial-gradient(circle at 100% 78%,#211020 0,transparent 34%),#08070b;color:#fff0f7}
+.top{background:#09070bea;border-bottom:1px solid #ff4f9a35;box-shadow:0 8px 30px #0006}
+.brand,.eyebrow,.section-head small{color:#ff70ad}.brand{letter-spacing:2px;text-shadow:0 0 18px #ff4f9a55}
+.links{color:#e8d3df}.links a:hover{color:#ff70ad;text-shadow:0 0 12px #ff4f9a88}
+.hero{isolation:isolate}.hero:before,.hero:after{color:#ff4f9a13;text-shadow:0 0 50px #ff4f9a22}
+.hero:before{font-size:clamp(190px,28vw,330px)}.hero:after{font-size:clamp(130px,20vw,230px)}
+.hero h1,.section-head h2,.end h2{color:#ff78b4;text-shadow:0 0 18px #ff4f9a55,0 0 55px #e92d8333}
+.hero p,.section-head p,.end p{color:#d5bdca}.rule{background:linear-gradient(90deg,transparent,#ff4f9a,transparent);height:2px;width:110px}
+.btn{background:linear-gradient(135deg,#ff5ba0,#c91d70);border:1px solid #ff9bc6;color:#160811;font-weight:800;box-shadow:0 8px 28px #e92d8330}
+.btn:hover{background:#fff0f7;color:#b51e65;box-shadow:0 0 28px #ff4f9a66}
+.letter,.trait,.music-card{background:linear-gradient(145deg,#1d1420,#100c14 72%);border:1px solid #66334f;box-shadow:0 18px 55px #0008,inset 0 1px #ffffff0b;color:#fff0f7}
+.letter{position:relative;overflow:hidden}.letter:before{content:"";position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,transparent,#ff4f9a,transparent)}
+.letter p{color:#f7e7ef}.trait{transition:transform .25s,border-color .25s,box-shadow .25s}.trait:hover{transform:translateY(-5px);border-color:#ff70ad;box-shadow:0 18px 45px #e92d8328}
+.trait b,.song-title{color:#ff78b4}.trait span,.photo figcaption,.song-artist{color:#c5aebb}
+.photo{background:#130e17;border-color:#573047;box-shadow:0 12px 32px #0007}.photo:hover{border-color:#ff70ad;box-shadow:0 0 25px #e92d8333}
+.music-card{background:linear-gradient(145deg,#211322,#0d0a11);border-color:#773653}.disc{border-color:#6b3150;box-shadow:0 0 35px #ff4f9a55}
+audio{accent-color:#ff4f9a}.book{background:linear-gradient(110deg,#ead8e0,#fff7fb 12%,#fff7fb 88%,#ecd9e4);color:#281321;box-shadow:0 22px 75px #000b,0 0 0 1px #ff70ad55}
+.book h3{color:#a51e61}.book .note,.chapter-label{color:#a64a78}
+.memory-wide figcaption,.memory-side figcaption,.memory-note figcaption,.memory-small figcaption{color:#bd8ba6}
+.memory-side img,.memory-wide img{box-shadow:0 12px 35px #0008}.memory-note img{background:#17101a}.memory-small img{border-color:#d63b83;box-shadow:0 0 25px #ff4f9a33}
+.song-interlude{background:linear-gradient(120deg,#1b101b,#2a1424,#130d17);border-color:#63324d}.song-kicker,.song-interlude h3{color:#ff78b4}.song-interlude>p{color:#e9d4df}
+.inline-memory img{background:#130e17;border-color:#ff70ad66;box-shadow:0 12px 35px #0009}.inline-memory figcaption{color:#c5aebb}
+.chapter-pause{color:#ff8abc;border-color:#743653}.mini-player{background:#211322;color:#fff0f7;border:1px solid #6b3150}
+.end{background:linear-gradient(180deg,transparent,#200d1b 80%,#08070b)}footer{color:#967d8c;border-color:#ff4f9a25}
+.reader-top{color:#ff78b4}.flip-page{background:linear-gradient(100deg,#ead8e0,#fff7fb 9%,#fff7fb 95%,#e5ced9)}.flip-page h3{color:#a51e61}
+.reader-controls button{background:linear-gradient(135deg,#ff5ba0,#c91d70);color:#180912;border-color:#ff9bc6}
+.page-progress{background:#382031}.page-progress div{background:linear-gradient(90deg,#d51c75,#ff83b8)}.reader-hint{color:#b99aaa}
+.independent-question{background:linear-gradient(145deg,#1d1420,#100c14)!important;border:1px solid #66334f!important;color:#fff0f7!important;box-shadow:0 16px 45px #0008}
+.independent-question h3{color:#ff78b4!important}.quiz-option{background:#1b1320;color:#f8e8f0;border-color:#60334c}.quiz-option:hover{border-color:#ff70ad;background:#2a1725}
+.quiz-option.correct{background:#153126;border-color:#60b98b;color:#d8ffea}.quiz-option.wrong{background:#391323;border-color:#ef659b;color:#ffd9e8}.question-feedback{color:#ff83b8}
+.reward-page{background:radial-gradient(circle at 15% 15%,#5a2042 0,transparent 34%),radial-gradient(circle at 85% 85%,#32152d 0,transparent 38%),#08070b}
+.reward-page-content{background:linear-gradient(145deg,#211522,#100c14);border-color:#9a3d69;box-shadow:0 25px 90px #000b,0 0 35px #e92d8322}
+.reward-page-content h3,.photo-caption{color:#ff78b4}.reward-page-content p{color:#f0dce7}.reward-page-top{color:#ff78b4}
+.reward-page-top button{background:#1b1320;color:#ff9ac5;border-color:#ff70ad77}.reward-page-content .reward-reveal{background:#180f19;color:#ff9ac5;border-color:#e92d83}
+.reward-page-content .reward-reveal span{color:#c5aebb}.reward-page-foot{color:#c5aebb}
+.memory-garden{background:radial-gradient(ellipse at 50% 100%,#4a1b37,transparent 58%),linear-gradient(145deg,#1d1420,#100c14);border-color:#793956;box-shadow:0 18px 50px #0008}
+.garden-heading h3,.garden-heading{color:#ff78b4}.garden-heading p,.garden-count{color:#c5aebb}.garden-progress{background:#402237}
+.garden-progress span{background:linear-gradient(90deg,#c91d70,#ff83b8)}.constellation{border-color:#66334f}.constellation p{color:#e8d3df}
+.star-note{color:#ff78b4}.star-message{color:#ff83b8}.final-envelope{background:linear-gradient(135deg,#ff70ad,#bd1d68);color:#160811;border-color:#ff9bc6;box-shadow:0 12px 35px #e92d8340}
+.final-envelope small{color:#fff0f7}.final-letter-modal{background:#08070beF}.final-letter-card{background:linear-gradient(145deg,#211522,#100c14);border-color:#9a3d69;box-shadow:0 25px 90px #000c}
+.final-letter-card small,.final-letter-card .final-signature{color:#ff78b4}.final-letter-card h2{color:#ff78b4}.final-letter-card p{color:#f0dce7}
+.final-seal{background:#3a162b;color:#ff8abc;border-color:#b73b78}.close-final{color:#ff9ac5}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important;animation:none!important}}
+
+</style>
+
+<style>
+#siteGate{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:22px;background:radial-gradient(circle at 15% 15%,#57203f 0,transparent 36%),radial-gradient(circle at 85% 85%,#35152d 0,transparent 38%),#08070b}
+#siteGate[hidden]{display:none}.gate-card{width:min(430px,100%);padding:38px 28px;text-align:center;border:1px solid #9a3d69;border-radius:26px;background:linear-gradient(145deg,#211522,#100c14);box-shadow:0 25px 90px #000c,0 0 40px #e92d8325;position:relative;overflow:hidden}
+.gate-card:before{content:"";position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,transparent,#ff4f9a,transparent)}
+.gate-flower{font-size:48px;color:#ff70ad;text-shadow:0 0 25px #ff4f9a88}.gate-card h2{font:700 34px 'Amiri',serif;color:#ff78b4;margin:7px 0;text-shadow:0 0 20px #ff4f9a44}
+.gate-card p{color:#d3b9c8;margin:5px 0 22px}#gatePassword{width:100%;padding:14px 16px;border:1px solid #8b3b62;border-radius:14px;background:#0d0a11;color:#fff0f7;font:700 18px 'Cairo';text-align:center;letter-spacing:3px;outline:none}
+#gatePassword:focus{border-color:#ff70ad;box-shadow:0 0 0 4px #ff4f9a20}#gateSubmit{width:100%;margin-top:14px;padding:13px;border:0;border-radius:14px;background:linear-gradient(135deg,#ff70ad,#d51e76);color:#170a12;font:800 16px 'Cairo';cursor:pointer;box-shadow:0 9px 28px #e92d8340;transition:.2s}
+#gateSubmit:hover{transform:translateY(-2px);filter:brightness(1.1)}#gateError{min-height:24px;color:#ff8fbd;font-size:13px;margin-top:10px}body.gate-locked{overflow:hidden}
+</style>
+
+</head>
+<body>
+
+<div id="siteGate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+ <form class="gate-card" id="gateForm">
+  <div class="gate-flower">✿</div>
+  <h2 id="gateTitle">أهلاً بكِ في عالم ميرا</h2>
+  <p>أدخلي كلمة المرور لفتح الهدية الوردية</p>
+  <input id="gatePassword" type="password" inputmode="decimal" autocomplete="off" placeholder="كلمة المرور" aria-label="كلمة المرور" required>
+  <button id="gateSubmit" type="submit">افتحي الموقع ✨</button>
+  <div id="gateError" role="alert"></div>
+ </form>
+</div>
+<script>
+(function(){
+ const gate=document.getElementById('siteGate');
+ document.body.classList.add('gate-locked');
+ document.getElementById('gateForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  if(document.getElementById('gatePassword').value==='16.12.2007'){
+   gate.hidden=true;
+   document.body.classList.remove('gate-locked');
+  }else{
+   document.getElementById('gateError').textContent='كلمة المرور غير صحيحة، حاولي مرة أخرى 🌷';
+   document.getElementById('gatePassword').select();
+  }
+ });
+})();
+</script>
+
+<header class="top"><div class="wrap nav">
+  <a class="brand" href="#home">MIRA ✿</a>
+  <nav class="links"><a href="#quiz">الأسئلة</a><a href="#letter">الإهداء</a><a href="#traits">كما أراكِ</a><a href="#story">الرواية</a></nav>
+</div></header>
+
+<main id="home">
+<section class="hero">
+ <div class="wrap">
+  <div class="eyebrow">A LITTLE GIFT, WITH MANY MEMORIES</div>
+  <h1>ميرا</h1>
+  <div class="rule"></div>
+  <p>حكاية شخصين تقاسما عالمين مختلفين، وترك كلٌّ منهما أثراً جميلاً في حياة الآخر.</p>
+  <a class="btn" href="#letter">افتحي هديتكِ</a>
+  <a class="btn" href="#story">ابدئي القراءة</a>
+ </div>
+</section>
+
+
+
+
+<section id="letter"><div class="wrap">
+ <div class="section-head"><small>A NOTE FOR YOUR DAY</small><h2>إلى ميرا، في يوم ميلادها</h2><p>بعض الهدايا لا تُقاس بحجمها، بل بما تحمله من معنى.</p></div>
+ <article class="letter">
+  <p>أتمنى أن يحمل لكِ عامكِ الجديد أياماً أهدأ، وضحكات أكثر، وأحلاماً تجد طريقها إليكِ واحداً تلو الآخر.</p>
+  <p>أعرف أنكِ تحبين القراءة، لذلك أردت أن تكون هديتكِ حكاية؛ صفحاتٌ تجمع بعض اللحظات التي مرّت، والأشياء الصغيرة التي جعلت الأيام أكثر لطفاً.</p>
+  <p>وحبيت نفكّرك برك، خاصة إذا راكي تجوزي وقت صعيب: ما تنسايش شحال فيك من صفات جميلة، وشحال تقدري تخلّي أثراً طيباً في حياة الناس.</p>
+  <div class="signature">— من شخص يتمنى لكِ الخير دائماً 🌿</div>
+ </article>
+</div></section>
+
+<section id="traits"><div class="wrap">
+ <div class="section-head"><small>THE WAY I SEE YOU</small><h2>كما أراكِ</h2><p>صفات جميلة تستحق أن تُقال، لا أن تبقى في الذاكرة فقط.</p></div>
+ <div class="traits">
+  <div class="trait"><b>طيبة القلب</b><span>إنسانة طيبة، وكان لطفكِ حاضراً في أوقات كثيرة.</span></div>
+  <div class="trait"><b>قارئة محبة للمعرفة</b><span>تجدين في الكتب عوالم جديدة، وفي الحكايات مساحة للتأمل.</span></div>
+  <div class="trait"><b>مشجّعة</b><span>تعرفين كيف تدفعين من حولكِ إلى مواصلة ما بدأوه.</span></div>
+  <div class="trait"><b>ترسمين الابتسامة</b><span>لديكِ طريقة لطيفة تجعلين بها اللحظات أخف.</span></div>
+  <div class="trait"><b>شاكرة ولا تنسين الخير</b><span>تقدّرين التفاصيل الصغيرة، ولا يضيع منكِ أثر المعروف.</span></div>
+  <div class="trait"><b>قوية ومسؤولة</b><span>فيكِ قوة هادئة، وأنوثة لطيفة، وقدرة على تحمّل المسؤولية.</span></div>
+  <div class="trait"><b>فصيحة وموهوبة</b><span>كلماتكِ وصوتكِ ومواهبكِ أشياء لها حضورها الخاص.</span></div>
+  <div class="trait"><b>محبة للفن والحكايات</b><span>من الأفلام والمسلسلات إلى القراءة، تعرفين كيف تستمتعين بالتفاصيل.</span></div>
+  <div class="trait"><b>تهتمين بالتفاصيل</b><span>تلاحظين أشياء قد تمرّ على غيركِ دون انتباه.</span></div>
+  <div class="trait"><b>جمالكِ في حضوركِ</b><span>ابتسامتكِ وعيناكِ وتفاصيلكِ الجميلة جزء من الصورة التي أتذكرها.</span></div>
+ </div>
+</div></section>
+
+
+<section id="story"><div class="wrap">
+ <div class="section-head"><small>THE STORY</small><h2>ميرا — حكاية تستحق أن تُقرأ</h2><p>اقرئي على مهل… فبعض الحكايات أجمل حين لا نستعجلها.</p></div>
+
+<div class="reader-shell"><div class="reader-top"><span>الجزء الأول · البدايات وما بعدها</span><span id="pageCounter">01 / 60</span></div><div class="flip-stage" id="flipStage"><section class="flip-page" data-page="1"><div class="page-number">01 / 60</div><h3>أيام بلا ألوان</h3><p>لم يكن أحمد يكره حياته، لكنه لم يكن يعرف كيف يستمتع بها أيضاً. كانت الأيام تتشابه؛ محاضرات، ووجوه عابرة، ومحادثات تبدأ سريعاً ثم تنتهي قبل أن تترك أثراً. في الإقامة الجامعية، خلال فترة امتحانات الاستدراك، كان الوقت أطول مما ينبغي.</p><figure class="page-rose"><img src="assets/rose-first.jpg" alt="وردة حمراء"><figcaption>وردة واحدة… وذكرى بقيت.</figcaption></figure><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="2"><div class="page-number">02 / 60</div><h3>وقت طويل</h3><p>كان يحمل هاتفه معظم الوقت. يتصفح الأخبار، ينتقل بين المجموعات، أو يبحث عن شيء يملأ فراغاً لا يعرف اسمه. لم يكن ينتظر حدثاً عظيماً؛ كان يريد فقط أن تمر الأيام بأقل قدر من الثقل.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="3"><div class="page-number">03 / 60</div><h3>اسم في مجموعة</h3><p>في يوم عادي ظهر اسم فتاة في مجموعة على Messenger. لم تكن هناك موسيقى تصويرية ولا لحظة يتوقف فيها الزمن. كانت فتاة تشارك الآخرين الحديث بعفوية، وتبدو مرحة، وتحب الغناء.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="4"><div class="page-number">04 / 60</div><h3>رسالة مهذبة</h3><p>تحدث معها قليلاً داخل المجموعة، ثم غادرت. لم يفكر في الأمر كثيراً، لكنه أرسل إليها رسالة خاصة يطلب منها العودة إلى المجموعة. كانت رسالة بسيطة لا تحمل توقعات كبيرة، ثم أغلق الهاتف وعاد إلى يومه.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="5"><div class="page-number">05 / 60</div><h3>إشعار في الصباح</h3><p>في اليوم التالي وجد إشعاراً جديداً. كانت ميرا. شكرته على رسالته وسألته عن حاله. قرأ الكلمات وأجابها، وبدأ الحديث بأسئلة بسيطة انتقلت بعدها المحادثة إلى مواضيع أخرى.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="6"><div class="page-number">06 / 60</div><h3>حكايات قديمة</h3><p>تحدثا عن الحياة، ثم عن الحب. أخبرته ميرا أنها لا تريد الدخول في علاقة جديدة بعد تجربة سابقة جعلتها مترددة. استمع إليها دون أن يحاول إقناعها بعكس ما تشعر به.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="7"><div class="page-number">07 / 60</div><h3>فراغ تركه الغياب</h3><p>حكى لها أحمد بدوره عن فتاة أحبته ثم غادرت حياته قبل نحو عامين. كانت لكل منهما قصة مختلفة، لكنهما عرفا معنى أن يترك شخص ما فراغاً خلفه. لم تكن المحادثة اعترافاً بالحب؛ كانت بداية صداقة.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="8"><div class="page-number">08 / 60</div><h3>بدايات هادئة</h3><p>أحياناً تكون البدايات الحقيقية هادئة إلى درجة أننا لا نلاحظ أهميتها إلا بعد سنوات. لم يكن أي منهما يعرف أن تلك الرسائل الصغيرة ستصبح لاحقاً جزءاً من ذاكرته.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="9"><div class="page-number">09 / 60</div><h3>عالم الأفلام</h3><p>اكتشف أحمد سريعاً أن ميرا تحب الأفلام والمسلسلات. كانت تستطيع أن تتحدث بحماس عن مسلسل طويل، تشرح الأحداث والشخصيات، وتخبره عن الحلقة التي شاهدتها وما أعجبها أو أغضبها.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="10"><div class="page-number">10 / 60</div><h3>عالم الألعاب</h3><p>أما أحمد فكان من عالم آخر. أحب ألعاب الفيديو، ولم تكن بالنسبة إليه مجرد وسيلة لتمضية الوقت؛ كانت قصصاً يعيش تفاصيلها، وشخصيات يتذكرها، وعوالم يستطيع قضاء ساعات في استكشافها.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="11"><div class="page-number">11 / 60</div><h3>نافذة صغيرة</h3><p>كان يبدأ حديثه عن The Last of Us، ثم ينتقل إلى Red Dead Redemption أو Resident Evil. لم تكن ميرا تعرف كل التفاصيل، لكنها كانت تعرف متى يتحمس، ومتى يريد أن يحكي عن شخصية أثرت فيه.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="12"><div class="page-number">12 / 60</div><h3>الإنصات المتبادل</h3><p>في المقابل، كان يستمع إلى حكاياتها عن المسلسلات. ربما نسي اسم العمل أو بعض الشخصيات، لكنه يعود ليسألها عما حدث في الحلقة التالية. لم يكن الأمر متعلقاً بالألعاب أو المسلسلات بقدر ما كان متعلقاً برغبة كل منهما في مشاركة ما يحب.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="13"><div class="page-number">13 / 60</div><h3>اختلاف جميل</h3><p>كان أحمد يحب Attack on Titan، بينما كانت ميرا تعشق One Piece. عالم العمالقة والأسوار عنده، وعالم القراصنة والبحار عندها. لم يحتج أي منهما إلى إقناع الآخر بأن ذوقه هو الأفضل؛ كان الاختلاف جزءاً من المتعة.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="14"><div class="page-number">14 / 60</div><h3>أحاديث لا تنتهي</h3><p>شيئاً فشيئاً، لم تعد المحادثات مقتصرة على وقت الفراغ. صارت تمتد خلال اليوم كله تقريباً. كان أحمد يشاركها ما حدث في الجامعة، وما يعمل عليه، وما يلعبه، والفكرة التي خطرت له.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="15"><div class="page-number">15 / 60</div><h3>تفاصيلها أيضاً</h3><p>وكانت هي تشاركه أغانيها وأخبارها وما تشاهده وما تتعلمه. لم يكن عليه أن ينتظر حدثاً استثنائياً حتى يخبرها، فقد أصبحت حتى التفاصيل العادية قابلة للمشاركة.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="16"><div class="page-number">16 / 60</div><h3>صباح الخير</h3><p>كانت هناك محادثات تبدأ في الصباح ولا تنتهي إلا في وقت متأخر من الليل. وأحياناً يمتد السهر حتى الثالثة صباحاً. ينتقلان من موضوع إلى آخر دون أن يشعر أحدهما بضرورة إنهاء الحديث.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="17"><div class="page-number">17 / 60</div><h3>مكان في اليوم</h3><p>بدأ أحمد يلاحظ أن الهاتف لم يعد مجرد شاشة يتابع الأخبار أو يلعب من خلالها. أصبح هناك شخص قد يسأله عن يومه، أو يرسل له أغنية، أو يحكي له عن حلقة شاهدها.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="18"><div class="page-number">18 / 60</div><h3>تشجيع هادئ</h3><p>كانت ميرا تتابع أعماله ومشاريعه وتشجعه على مواصلة ما بدأه. لم تكن تحتاج إلى كلمات كبيرة؛ أحياناً كانت رسالة قصيرة منها كافية لتجعله ينظر إلى مهمته من زاوية أكثر هدوءاً.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="19"><div class="page-number">19 / 60</div><h3>خطواته الخاصة</h3><p>عاد أحمد يهتم بدراسته ومشاريعه، وبدأ يبتعد عن عادات وعلاقات لم تكن تضيف إلى حياته. لم يكن ذلك لأنها قامت بالمهمة بدلاً منه؛ كان قراره وجهده، لكن التشجيع جعل الطريق أقل وحدة.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="20"><div class="page-number">20 / 60</div><h3>رحلتها في التعلم</h3><p>وكان هو بدوره مهتماً برحلتها في التعلم. يسألها عما تعمل عليه، ويشجعها حين تتقدم، ويفرح حين تنجح في خطوة كانت تنتظرها. كان لكل منهما طريقه، لكنهما تعلما أن يتبادلا الدعم.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="21"><div class="page-number">21 / 60</div><h3>عودة إلى الحركة</h3><p>بعد فترة ابتعد فيها عن التمرين بسبب إصابة وانقطاع، بدأ أحمد يعود تدريجياً إلى نشاطه. شجعته ميرا على ألا يستسلم، وأن يمنح نفسه الوقت. لم يكن الهدف رقمًا أو تحدياً؛ كان أن يستعيد ثقته بخطوات متوازنة.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="22"><div class="page-number">22 / 60</div><h3>أيام الجامعة</h3><p>كانت الجامعة حاضرة في أحاديثهما؛ محاضرات، امتحانات، ضغط، وأفكار عن المستقبل. كان يشاركها تفاصيل يومه، وكانت هي تخبره بما يشغلها. لم تكن كل الأخبار سعيدة، لكن وجود من يسمع جعلها أقل ثقلاً.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="23"><div class="page-number">23 / 60</div><h3>مزحة كوريا</h3><p>كان لدى ميرا اقتراح يتكرر بين الحين والآخر: أن يخطفها أحمد ويهربا إلى كوريا. لم تكن هناك تذاكر طيران ولا حقائب تنتظر عند الباب؛ كانت مزحة بينهما، لكنها صارت جزءاً من لغتهما الخاصة.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="24"><div class="page-number">24 / 60</div><h3>بلد في الخيال</h3><p>صارت كوريا في خيالهما مكاناً بعيداً يضيف إلى يومهما نكتة صغيرة لا يفهمها سواهما. لم تكن الذكريات تحتاج إلى أحداث عظيمة كي تبقى؛ أحياناً يكفي أن تتكرر جملة حتى تصبح جزءاً من لغة خاصة.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="25"><div class="page-number">25 / 60</div><h3>الكتب</h3><p>كانت ميرا تحب القراءة، ولذلك فكر أحمد في أن يهديها كتاباً. اختار «الليالي البيضاء» لدوستويفسكي؛ كتاباً يحمل تأملات عن اللقاءات والمشاعر والوحدة، ويمنح القارئ مساحة للتفكير فيما يمر به.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="26"><div class="page-number">26 / 60</div><h3>هدية بمعنى</h3><p>لم يكن الكتاب محاولة لقول شيء لا يستطيع قوله، ولا وعداً بعلاقة مختلفة. كان ببساطة هدية لشخص يعرف أنه يحب الكتب. وربما كانت أجمل الهدايا هي التي تقول: انتبهت إلى ما تحبين.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="27"><div class="page-number">27 / 60</div><h3>أغنية وصوت</h3><p>كانت ميرا ترسل الأغاني أحياناً، وتشارك صوتها حين تغني. كان أحمد يرى في صوتها جمالاً خاصاً، ويستمع باهتمام. لم تكن الموسيقى مجرد خلفية؛ كانت واحدة من الطرق التي يتبادلان بها تفاصيل يومهما.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="28"><div class="page-number">28 / 60</div><h3>أشياء صغيرة</h3><p>صورة عابرة، مقطع مضحك، خبر عن مسلسل، أو فكرة لمشروع. تراكمت الأشياء الصغيرة حتى صار لكل منها مكان في ذاكرتهما. لم يكن كل يوم مثالياً، لكن الكثير من الأيام حمل شيئاً يستحق الابتسام.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="29"><div class="page-number">29 / 60</div><h3>الوردة</h3><p>في مرة لم تكن ميرا على ما يرام، اختار أحمد أن يهديها وردة. لم تكن الهدية كبيرة ولا معقدة؛ كانت محاولة بسيطة ليقول لها إنه يتمنى لها الراحة. احتفظ هو بذكرى تلك اللحظة دون أن يفرض عليها معنى أكبر.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="30"><div class="page-number">30 / 60</div><h3>الوقت يتغير</h3><p>مع مرور الوقت، بدأت الصداقة تحمل مشاعر أكثر تعقيداً. كان أحمد متعلقاً بقربها، ويجد في حديثها راحة كبيرة. لكنه لم يطلب منها أن تكون حبيبته؛ فقد كانت واضحة في وصفها للعلاقة بأنها صداقة.</p><div class="page-song"><div class="song-kicker">استراحة في منتصف الحكاية</div><h3>أغنيتكِ المفضلة</h3><p>مكان صغير للأغنية التي تحبينها، مرة واحدة في هذه الرواية.</p><audio controls preload="metadata"><source src="assets/baby.mp3" type="audio/mpeg">متصفحك لا يدعم تشغيل الصوت.</audio></div><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="31"><div class="page-number">31 / 60</div><h3>اسم العلاقة</h3><p>كانت تقول إنها تحبه كصديق مقرّب، أو كما اعتادت أن تسميه «بستي». حاول أحمد أن يفهم حدود هذا القرب، وأن يقدّر ما تمنحه الصداقة دون أن يحولها إلى وعد لم تقدمه.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="32"><div class="page-number">32 / 60</div><h3>أول غياب طويل</h3><p>في مرة غابت ميرا يوماً كاملاً تقريباً. اكتشف أحمد أنه يفتقد الحديث معها أكثر مما توقع. لم يكن الغياب دليلاً على شيء من جهتها؛ لكنه كشف له مقدار تعلقه هو بالمحادثات اليومية.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="33"><div class="page-number">33 / 60</div><h3>القلق</h3><p>بدأ يراقب أحياناً توقيت ظهورها، ويتساءل لماذا تأخرت في الرد. كانت الرسائل القصيرة تزعجه، وكان الصمت يفتح في ذهنه احتمالات كثيرة. شيئاً فشيئاً صار يحتاج إلى تعلم الفرق بين الاشتياق وحق الآخر في مساحته.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="34"><div class="page-number">34 / 60</div><h3>مساحة شخصية</h3><p>كانت ميرا تريد أن تبقى حرة في يومها وعلاقاتها، وألا تشعر بأنها مطالبة بتفسير كل غياب. وكان أحمد يحاول أن يفهم أن الاهتمام لا يعني المراقبة، وأن الصداقة لا تمنح أحداً حق امتلاك وقت الآخر.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="35"><div class="page-number">35 / 60</div><h3>سوء فهم</h3><p>حدثت بينهما مواقف صغيرة تضخمت بسبب التوقعات. كلمة فُهمت بطريقة مختلفة، وتأخر في الرد، ومزحة لم تصل كما كان مقصوداً. لم يكن أي منهما يعرف دائماً كيف يشرح ما بداخله دون أن يجرح الآخر.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="36"><div class="page-number">36 / 60</div><h3>اعتذار</h3><p>بعد إحدى المرات التي ابتعد فيها أحمد عن المحادثة، وصلته منها رسائل صوتية تحمل اعتذاراً. أجابها بهدوء أن الأمر عادي ولا يستحق القلق. كان يريد أن يعود الحديث بسيطاً، كما كان.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="37"><div class="page-number">37 / 60</div><h3>كلمات قاسية</h3><p>لكن الهدوء لم يستمر دائماً. أحياناً خرجت كلمات قاسية من أحدهما، وأحياناً ردود مختصرة زادت المسافة. كان كل خلاف يترك شيئاً من التعب، حتى عندما يعودان إلى الحديث بعده.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="38"><div class="page-number">38 / 60</div><h3>الحب والصداقة</h3><p>في حديث صريح، شعرت ميرا أن أحمد ربما ينتظر منها حباً يتجاوز الصداقة. حاول أن يوضح أنه لا يطلب منها علاقة عاطفية، وأنه يقدّر حبها له بوصفه صديقاً. بقي الاختلاف بين ما يريده كل طرف من القرب أمراً يحتاج إلى احترام.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="39"><div class="page-number">39 / 60</div><h3>عودة الماضي</h3><p>عندما عاد شخص من ماضي ميرا إلى الصورة، شعر أحمد بأن اهتمامها تغيّر. لم يكن يعرف كل ما يدور في حياتها، لكنه بدأ يتساءل إن كان وجوده قد ملأ فراغاً مؤقتاً. كان ذلك إحساسه، لا حقيقة يستطيع الجزم بها.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="40"><div class="page-number">40 / 60</div><h3>الشك</h3><p>كلما زادت الأسئلة في رأسه، صار أقل قدرة على الاستمتاع باللحظات الجيدة. كان يبحث عن تفسير لكل تصرف، وينسى أحياناً أن العلاقة لا يمكن أن تُبنى على التخمين وحده.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="41"><div class="page-number">41 / 60</div><h3>محاولة الفهم</h3><p>حاول أن يحول غيرته إلى اهتمام، وأن يتعلم كيف يعبّر عن خوفه دون اتهام. لم ينجح دائماً. فبعض العادات لا تتغير بمجرد أن نعرف أنها تؤذينا؛ تحتاج إلى وقت وصدق مع النفس.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="42"><div class="page-number">42 / 60</div><h3>نقاشات متكررة</h3><p>تكررت الخلافات حول الغياب والاهتمام والحدود. كانت ميرا تريد ألا تُحاصر بالأسئلة، وكان أحمد يريد وضوحاً يطمئنه. لم يكن أي منهما يجد دائماً الكلمات المناسبة، فتراكم التعب.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="43"><div class="page-number">43 / 60</div><h3>قرار الابتعاد</h3><p>في لحظة شعر فيها أن العلاقة تستنزفه، قرر أحمد أن يبتعد. قال أشياء قاسية ندم على بعضها لاحقاً، لكنه كان يحاول إنهاء دائرة من الغيرة والاعتذار والقلق لم يعد يعرف كيف يوقفها.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="44"><div class="page-number">44 / 60</div><h3>حق المسافة</h3><p>لم يكن الابتعاد عقاباً لها، ولا إعلاناً بأنها شخص سيئ. كان محاولة لحماية نفسه واحترام المسافة التي طلبتها. أحياناً لا يكون الحل أن نكسب النقاش، بل أن نتوقف عن تكراره.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="45"><div class="page-number">45 / 60</div><h3>ندم هادئ</h3><p>بعد ذلك راجع أحمد بعض كلماته. تمنى لو أنه عبّر عن ألمه بطريقة أهدأ، ولو أنه لم يسمح للغضب أن يختار عباراته. لكنه فهم أيضاً أن الندم لا يعني العودة إلى كل ما كان.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="46"><div class="page-number">46 / 60</div><h3>الوردة في الذاكرة</h3><p>بقيت الوردة ذكرى لطيفة، لا دليلاً على وعد ولا رسالة خفية. تذكرها كما كانت: لفتة بسيطة أراد بها الخير لشخص كان يعني له الكثير.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="47"><div class="page-number">47 / 60</div><h3>الكتاب مرة أخرى</h3><p>عاد أحمد إلى معنى «الليالي البيضاء». فكر في أن بعض اللقاءات تترك أثراً حتى إن لم تستمر بالطريقة التي تخيلناها. ليس كل ما ينتهي كان خطأ، وليس كل ما كان جميلاً مطالباً بأن يدوم.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="48"><div class="page-number">48 / 60</div><h3>صمت الهاتف</h3><p>أغلق إشعارات بعض التطبيقات، وابتعد عن متابعة ما يحدث لحظة بلحظة. في البداية بدا الصمت غريباً، ثم بدأ يتعلم كيف يملأ يومه بالدراسة والعمل والأشياء التي تخصه.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="49"><div class="page-number">49 / 60</div><h3>أيامه من جديد</h3><p>عاد إلى مشاريعه وألعابه واهتماماته. لم تختفِ الذكريات فجأة، لكنها لم تعد الشيء الوحيد الذي يحدد مزاج يومه. اكتشف أن بإمكانه أن يفتقد شخصاً، وفي الوقت نفسه يختار ألا يلاحقه.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="50"><div class="page-number">50 / 60</div><h3>مكالمة غير متوقعة</h3><p>بعد فترة من التباعد، حدث اتصال لم يكن يتوقعه. تحدثا قرابة أربعين دقيقة، وسمع في صوتها شيئاً من خفة الأيام القديمة. تجنبا فتح الخلاف، ولم يحاولا حسم معنى المكالمة.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="51"><div class="page-number">51 / 60</div><h3>لا جواب جاهز</h3><p>انتهت المكالمة وبقيت الأسئلة. لم يكن الاتصال وعداً بالعودة، ولم يكن دليلاً على أن كل شيء صار كما كان. كان مجرد حديث حدث، ويمكن أن يُترك في حجمه الحقيقي دون تحميله أكثر مما يحتمل.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="52"><div class="page-number">52 / 60</div><h3>السعادة والحذر</h3><p>شعر أحمد بالسعادة بعد المكالمة، لكنه عرف أنه قد يعود إلى الدائرة القديمة إن لم ينتبه إلى نفسه. لذلك قرر ألا يبني توقعات كبيرة على لحظة واحدة، وألا ينسى ما تعلمه عن الحدود والهدوء.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="53"><div class="page-number">53 / 60</div><h3>ما تعلّمه</h3><p>تعلم أن الصداقة لا تُقاس بعدد الرسائل وحده، وأن القرب لا يعني امتلاك الآخر. وتعلم أن الاعتذار مهم، لكنه لا يلغي الحاجة إلى تغيير السلوك، وأن احترام المسافة أحياناً شكل من أشكال التقدير.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="54"><div class="page-number">54 / 60</div><h3>كما أراكِ</h3><p>ميرا في ذاكرته إنسانة طيبة، قارئة، مشجعة، تحب الأفلام والحكايات، وتعرف كيف ترسم ابتسامة. يراها شاكرة لا تنسى الخير، قوية ومسؤولة، فصيحة وموهوبة، ولها صوت جميل واهتمام بالتفاصيل.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="55"><div class="page-number">55 / 60</div><h3>أمنية صادقة</h3><p>لم يكتب هذه الصفحات ليطالبها بشيء، ولا ليجعلها تشعر بالذنب. كتبها كي يحفظ جانباً من حكاية عاشها، ويقول إن بعض الأشخاص يتركون أثراً طيباً حتى عندما تتغير الطرق.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="56"><div class="page-number">56 / 60</div><h3>صفحات جديدة</h3><p>تمنى لها أياماً أهدأ، وكتباً تحبها، وأفلاماً تدهشها، ونجاحات صغيرة تتراكم حتى تصبح إنجازات كبيرة. وتمنى لنفسه أيضاً أن يمضي إلى الأمام بقلب أهدأ، دون أن ينكر ما كان جميلاً.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="57"><div class="page-number">57 / 60</div><h3>نهاية مفتوحة</h3><p>لم يعرف أحمد كيف ستبدو الصفحة التالية. وربما لم يكن عليه أن يعرف. بعض الحكايات لا تنتهي بإجابة نهائية؛ بل تترك الباب مفتوحاً للحياة، وتسمح لكل شخص أن يكمل طريقه.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="58"><div class="page-number">58 / 60</div><h3>إلى ميرا</h3><p>في يوم ميلادكِ، أتمنى أن يحمل عامكِ الجديد طمأنينة أكثر، وضحكات صادقة، وأحلاماً تجد طريقها إليكِ. لا تنسي صفاتكِ الجميلة في الأيام الصعبة، ولا تقللي من قيمة الخطوات التي تبذلينها.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="59"><div class="page-number">59 / 60</div><h3>آخر الصفحة</h3><p>هذه ليست حكاية مثالية، ولا محاولة لتغيير ما حدث. إنها حكاية شخصين تقاسما عالمين مختلفين، وترك كل منهما أثراً في حياة الآخر. وما بقي منها هنا، هو الامتنان لما كان جميلاً، والاحترام لما يجب أن يبقى حراً.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section><section class="flip-page" data-page="60"><div class="page-number">60 / 60</div><h3>صفحة أخيرة</h3><p>تبقى هذه الصفحة مساحة للامتنان، وللأمنيات الطيبة، ولما سيكتبه الزمن بعد ذلك. لكل حكاية أثر، ولكل إنسان طريقه، ولعل القادم يحمل ما يستحق الفرح.</p><div class="page-foot">ميرا · حكاية من ستين صفحة</div></section></div><div class="reader-controls"><button id="prevPage" type="button" disabled>السابق</button><div class="page-progress"><div id="pageProgress"></div></div><button id="nextPage" type="button">التالي</button></div><div class="reader-hint">استخدمي الأسهم أو أزرار التنقل للانتقال بين الصفحات</div></div>
+</div></section>
+
+<section id="quiz"><div class="wrap">
+ <div class="section-head"><small>FOUR LITTLE SURPRISES</small><h2>والآن… هل تعرفين أحمد؟</h2><p>أربعة أسئلة مستقلة؛ اختاري أي سؤال تحبينه. كل إجابة صحيحة تفتح صفحة مفاجأتها.</p></div>
+ <div class="quiz-intro"><span>✦</span><p>لا يوجد ترتيب هنا، ولا حاجة لإنهاء سؤال قبل الآخر… اختاري عالماً وابدئي منه.</p><span>✦</span></div>
+ <div class="independent-quiz-grid" id="quizGrid"></div>
+
+ <div class="memory-garden" id="memoryGarden">
+  <div class="garden-heading"><span>✿</span><div><h3>حديقة الذكريات</h3><p>كل إجابة صحيحة تترك زهرة مضيئة هنا.</p></div><span>✧</span></div>
+  <div class="garden-flowers" id="gardenFlowers"><span class="garden-flower">✿</span><span class="garden-flower">✿</span><span class="garden-flower">✿</span><span class="garden-flower">✿</span></div>
+  <div class="garden-progress"><span id="gardenProgress"></span></div>
+  <p class="garden-count" id="gardenCount">0 من 4 زهور تفتحت</p>
+  <div class="constellation">
+   <p>وبين النجوم… هناك كلمات صغيرة</p>
+   <button type="button" class="star-note" data-note="بعض الأشخاص يجعلون التفاصيل العادية أكثر لطفاً.">✦</button>
+   <button type="button" class="star-note" data-note="لا تحتاج الذكريات الجميلة إلى أن تكون كبيرة؛ أحياناً تكفي ضحكة.">✧</button>
+   <button type="button" class="star-note" data-note="أتمنى أن تجدي دائماً سبباً جديداً للابتسام.">✦</button>
+   <div class="star-message" id="starMessage" aria-live="polite">اضغطي على نجمة لتكتشفي ما تخبئه.</div>
+  </div>
+  <button class="final-envelope" id="finalEnvelope" type="button" disabled>
+   <span class="envelope-icon">✉</span><span>الرسالة الأخيرة</span><small>تتفتح بعد الإجابة عن الأسئلة الأربعة</small>
+  </button>
+ </div>
+
+</div></section>
+<div class="celebration-layer" id="celebrationLayer" aria-hidden="true"></div>
+<div class="reward-page" id="rewardPage" hidden>
+ <div class="reward-page-top"><span>مفاجأة صغيرة لكِ</span><button id="rewardBack" type="button" aria-label="العودة للأسئلة">× العودة للأسئلة</button></div>
+ <div class="reward-page-content" id="rewardPageBody"></div>
+ <div class="reward-page-foot">بعض الإجابات تفتح أبواباً صغيرة من الذكريات ♡</div>
+</div>
+
+
+<div class="final-letter-modal" id="finalLetterModal" hidden>
+ <div class="final-letter-card">
+  <button type="button" id="closeFinalLetter" class="close-final" aria-label="إغلاق">×</button>
+  <div class="final-seal">✿</div>
+  <small>A LITTLE NOTE FROM AHMED</small>
+  <h2>إلى ميرا،</h2>
+  <p>وصلتِ إلى نهاية الأسئلة، لكن أجمل ما في هذه الهدية ليس عدد الإجابات الصحيحة؛ بل أنني استطعت أن أشارككِ بعض الأشياء التي أحبها، وبعض الكلمات التي أردت أن تصلكِ.</p>
+  <p>أتمنى أن تكون أيامكِ القادمة مليئة بالطمأنينة والفرح، وأن تظل أحلامكِ قريبة منكِ مهما طال الطريق.</p>
+  <p class="final-signature">كل عام وأنتِ بخير ♡</p>
+ </div>
+</div>
+
+<div class="end"><div class="wrap">
+ <h2>عامٌ جديد، وصفحات أجمل</h2>
+ <p>أتمنى أن تجدي في أيامكِ القادمة ما يشبه قلبكِ: لطفاً، وطمأنينة، وفرصاً كثيرة لتبدئي فصولاً تحبينها.</p>
+ <div class="rule"></div><span style="color:var(--pink)">كل عام وأنتِ بخير يا ميرا 🌸</span>
+</div></div>
+</main>
+<footer>صُنعت هذه الصفحة لتكون ذكرى جميلة، لا أكثر ولا أقل. ♡</footer>
+<script>
+
+
+const quizItems = [
+ {q:'ما لون أحمد المفضل؟',opts:['الأحمر','الأزرق','الأسود','الأخضر'],answer:'الأزرق',tag:'💙',reward:`<h3>أغنيتي المفضلة 💙</h3><p>هذه ليست مجرد أغنية كجائزة… إنها أغنيتي المفضلة، وأردت أن أشارككِ شيئاً أحبه.</p><audio controls preload="none" src="assets/without-me.mp3"></audio>`},
+ {q:'ما تاريخ عيد ميلاد أحمد؟',opts:['30.4','14.2','12.8','01.6'],answer:'30.4',tag:'🎂',reward:`<h3>رسالة من القلب ❤️</h3><p>هناك كلمات أحببت أن تصلكِ بصوتي…</p><audio controls preload="none" src="assets/heart-message.m4a"></audio>`},
+ {q:'إذا فقدتُ الذاكرة، ما الكلمة التي قد تجعلني أتذكركِ؟',opts:['ميرا','باستي','صديقتي','أحمد'],answer:'باستي',tag:'🌷',reward:`<h3>ذكرى صغيرة ❤️</h3><p>صورة من عالم أحمد…</p><img src="assets/memory-reward.jpg" alt="مفاجأة السؤال الثالث">`},
+ {q:'ما الأنمي الأقرب إلى قلب أحمد؟',opts:['One Piece','Naruto','Attack on Titan','Death Note'],answer:'Attack on Titan',tag:'🌙',reward:`<h3>صورتي معكِ *_*</h3><button class="reward-reveal" id="photoReveal" type="button">اضغطي لاكتشاف المفاجأة<span>هناك صورة تنتظركِ…</span></button>`}
+];
+const quizGrid=document.getElementById('quizGrid');
+const rewardPage=document.getElementById('rewardPage');
+const rewardPageBody=document.getElementById('rewardPageBody');
+const rewardBack=document.getElementById('rewardBack');
+const solvedQuestions=new Set();
+const gardenFlowers=[...document.querySelectorAll('.garden-flower')];
+const gardenProgress=document.getElementById('gardenProgress');
+const gardenCount=document.getElementById('gardenCount');
+const finalEnvelope=document.getElementById('finalEnvelope');
+const finalLetterModal=document.getElementById('finalLetterModal');
+function updateGarden(index){
+ if(solvedQuestions.has(index))return;
+ solvedQuestions.add(index);
+ gardenFlowers[index].classList.add('bloom');
+ gardenProgress.style.width=(solvedQuestions.size/quizItems.length*100)+'%';
+ gardenCount.textContent=`${solvedQuestions.size} من ${quizItems.length} زهور تفتحت`;
+ if(solvedQuestions.size===quizItems.length){
+  finalEnvelope.disabled=false;
+  finalEnvelope.querySelector('small').textContent='اكتملت الحديقة… هناك رسالة تنتظركِ ✨';
+  celebrateCorrectAnswer();
+ }
+}
+document.querySelectorAll('.star-note').forEach(star=>star.addEventListener('click',()=>{
+ document.getElementById('starMessage').textContent=star.dataset.note;
+ star.classList.add('star-used');
+}));
+finalEnvelope.addEventListener('click',()=>{if(!finalEnvelope.disabled)finalLetterModal.hidden=false;});
+document.getElementById('closeFinalLetter').addEventListener('click',()=>finalLetterModal.hidden=true);
+finalLetterModal.addEventListener('click',e=>{if(e.target===finalLetterModal)finalLetterModal.hidden=true;});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')finalLetterModal.hidden=true;});
+
+
+const celebrationLayer=document.getElementById('celebrationLayer');
+let celebrationTimer=null;
+function playSuccessChime(){
+ try{
+  const AudioCtx=window.AudioContext||window.webkitAudioContext;
+  if(!AudioCtx)return;
+  const ctx=new AudioCtx();
+  const now=ctx.currentTime;
+  const notes=[659.25,783.99,987.77,1318.51];
+  notes.forEach((freq,i)=>{
+   const osc=ctx.createOscillator();
+   const gain=ctx.createGain();
+   osc.type='sine';
+   osc.frequency.setValueAtTime(freq,now+i*.105);
+   gain.gain.setValueAtTime(.0001,now+i*.105);
+   gain.gain.exponentialRampToValueAtTime(.12,now+i*.105+.025);
+   gain.gain.exponentialRampToValueAtTime(.0001,now+i*.105+.42);
+   osc.connect(gain);gain.connect(ctx.destination);
+   osc.start(now+i*.105);osc.stop(now+i*.105+.45);
+  });
+  setTimeout(()=>ctx.close(),1100);
+ }catch(e){}
+}
+function celebrateCorrectAnswer(){
+ playSuccessChime();
+ celebrationLayer.innerHTML='';
+ const total=42;
+ for(let i=0;i<total;i++){
+  const p=document.createElement('span');
+  const isStar=i%3===0;
+  p.className='celebration-particle '+(isStar?'star':'petal');
+  p.style.setProperty('--x',(Math.random()*100)+'%');
+  p.style.setProperty('--delay',(Math.random()*.75)+'s');
+  p.style.setProperty('--duration',(3.1+Math.random()*2.2)+'s');
+  p.style.setProperty('--drift',((Math.random()-.5)*34)+'vw');
+  p.style.setProperty('--rot',Math.round(Math.random()*360)+'deg');
+  celebrationLayer.appendChild(p);
+ }
+ if(celebrationTimer)clearTimeout(celebrationTimer);
+ celebrationTimer=setTimeout(()=>{celebrationLayer.innerHTML='';},6500);
+}
+
+quizItems.forEach((item,index)=>{
+ const card=document.createElement('article');
+ card.className='independent-question';
+ card.innerHTML=`<div class="question-top"><span class="question-number">0${index+1}</span><span class="question-icon">${item.tag}</span></div><h3>${item.q}</h3><div class="independent-options"></div><p class="question-feedback" aria-live="polite"></p>`;
+ const opts=card.querySelector('.independent-options');
+ item.opts.forEach(opt=>{
+  const b=document.createElement('button');
+  b.type='button';b.className='quiz-option';b.textContent=opt;
+  b.addEventListener('click',()=>{
+   if(opt===item.answer){
+    b.classList.add('correct');
+    card.querySelectorAll('button').forEach(x=>x.disabled=true);
+    card.querySelector('.question-feedback').textContent='أحسنتِ! هذه الإجابة فتحت لكِ مفاجأة ✨';
+    celebrateCorrectAnswer();
+    updateGarden(index);
+    rewardPageBody.innerHTML=item.reward;
+    rewardPage.hidden=false;
+    document.body.classList.add('reward-open');
+    rewardPage.scrollTop=0;
+    const reveal=document.getElementById('photoReveal');
+    if(reveal) reveal.addEventListener('click',()=>{
+      reveal.outerHTML='<img src="assets/photo-with-you.png" alt="صورتي معكِ"><p class="photo-caption">صورتي معكِ *_*</p>';
+    });
+   }else{
+    b.classList.add('wrong');
+    card.querySelector('.question-feedback').textContent='ليست هذه الإجابة… جرّبي مرة أخرى 🙂';
+    setTimeout(()=>b.classList.remove('wrong'),650);
+   }
+  });
+  opts.appendChild(b);
+ });
+ quizGrid.appendChild(card);
+});
+function closeReward(){rewardPage.hidden=true;document.body.classList.remove('reward-open');}
+rewardBack.addEventListener('click',closeReward);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!rewardPage.hidden)closeReward();});
+
+const pages=[...document.querySelectorAll('.flip-page')];let current=0;
+const counter=document.getElementById('pageCounter'),progress=document.getElementById('pageProgress'),prev=document.getElementById('prevPage'),next=document.getElementById('nextPage');
+function showPage(n){current=Math.max(0,Math.min(pages.length-1,n));pages.forEach((p,i)=>p.classList.toggle('active',i===current));counter.textContent=String(current+1).padStart(2,'0')+' / 60';progress.style.width=((current+1)/60*100)+'%';prev.disabled=current===0;next.disabled=current===59;}
+prev.addEventListener('click',()=>showPage(current-1));next.addEventListener('click',()=>showPage(current+1));document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')showPage(current+1);if(e.key==='ArrowRight')showPage(current-1)});showPage(0);
+</script>
+</body></html>
